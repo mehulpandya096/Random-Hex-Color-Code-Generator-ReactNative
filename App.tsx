@@ -9,26 +9,42 @@ import React, {useState} from 'react';
 
 export default function App(): JSX.Element {
   const [randBackground, setRandBackGround] = useState('#ffffff');
-
+  const [randBackgroundtwo, setRandBackGroundtwo] = useState('#ffffff');
   const generateColour = () => {
     //# color-range
     const hashColorRange = '0123456789ABCDEF';
     let color = '#';
+    const hashColorRanges = '0123456789ABCDEF';
+    let colors = '#';
+
     for (let i = 0; i < 6; i++) {
       color += hashColorRange[Math.floor(Math.random() * 16)];
     }
 
+    for (let i = 0; i < 6; i++) {
+      colors += hashColorRanges[Math.floor(Math.random() * 16)];
+    }
+    setRandBackGroundtwo(colors);
     setRandBackGround(color);
   };
 
+  console.log('randBackground>>>', randBackground);
+  console.log('randBackgroundtwo>>>', randBackgroundtwo);
   return (
     <>
       <StatusBar backgroundColor={randBackground} />
-
       <View style={[styles.container, {backgroundColor: randBackground}]}>
         <View style={styles.colorContainer}>
           <Text style={styles.textColorCode} selectable={true}>
             {randBackground}
+          </Text>
+        </View>
+      </View>
+
+      <View style={[styles.container, {backgroundColor: randBackgroundtwo}]}>
+        <View style={styles.colorContainer}>
+          <Text style={styles.textColorCode} selectable={true}>
+            {randBackgroundtwo}
           </Text>
         </View>
         <TouchableOpacity onPress={generateColour}>
