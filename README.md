@@ -1,9 +1,5 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-#Here are basic UI configrarion 
-![alt text](image.png)
-
-here we are using basic JS and TS function to Generate # code color value. for more kindly set up project as discription below  
 
 # Getting Started
 
